@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h2>Diabetes Prediction</h2>
+    <form action="/predict" method="post">
+        <label for="pregnancies">Pregnancies:</label><br>
+        <input type="text" id="pregnancies" name="pregnancies" required><br><br>
+        
+        <label for="glucose">Glucose Level:</label><br>
+        <input type="text" id="glucose" name="glucose" required><br><br>
+        
+        <label for="bloodpressure">Blood Pressure:</label><br>
+        <input type="text" id="bloodpressure" name="bloodpressure" required><br><br>
+        
+        <label for="skinthickness">Skin Thickness:</label><br>
+        <input type="text" id="skinthickness" name="skinthickness" required><br><br>
+        
+        <label for="insulin">Insulin Level:</label><br>
+        <input type="text" id="insulin" name="insulin" required><br><br>
+        
+        <label for="bmi">BMI:</label><br>
+        <input type="text" id="bmi" name="bmi" required><br><br>
+        
+        <label for="dpf">Diabetes Pedigree Function (DPF):</label><br>
+        <input type="text" id="dpf" name="dpf" required><br><br>
+        
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age" required><br><br>
+        
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>{{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
